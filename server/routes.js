@@ -1,5 +1,5 @@
 var app = require('express')();
-var settings = require('../settings')
+var config = require('config');
 var mongoose = require('mongoose');
 // var request = require('request');
 var iconv = require('iconv-lite');
@@ -27,10 +27,7 @@ function get_quotes_from_html(decodedBody) {
 iconv.skipDecodeWarning = true;
 
 app.get('/quote', function(req, res) {
-
-	console.log(settings['abbys_url']);
-
-	var url = settings['abbys_url'];
+	var url = config.get('abbys_url');
 
 	http.get(url, function(response) {
 	  response.pipe(iconv.decodeStream('win1251')).collect(function(err, decodedBody) {

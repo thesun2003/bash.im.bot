@@ -1,7 +1,7 @@
 var express = require('express');
 var app = express();
 var router = express.Router();
-var settings = require('./settings')
+var config = require('config');
 //var mongoose = require('mongoose');
  
 var api = require('./server/routes')
