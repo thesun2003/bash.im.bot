@@ -24,6 +24,9 @@
     "node",
     "js"
   ],
+  "scripts": {
+    "start": "node index.js"
+  },
   "author": "Vladimir Semenov",
   "license": "ISC",
   "bugs": {
