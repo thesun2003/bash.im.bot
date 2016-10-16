@@ -1,0 +1,33 @@
+{
+  "name": "bash.im.api",
+  "version": "0.0.1",
+  "description": "Bash.Im API",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thesun2003/bash.im.api.git"
+  },
+  "dependencies": {
+    "cheerio": "^0.22.0",
+    "express": "^4.14.0",
+    "iconv-lite": "^0.4.13",
+    "mongodb": "^2.2.10",
+    "mongoose": "^4.6.2",
+    "request": "^2.75.0"
+  },
+  "keywords": [
+    "bash",
+    "api",
+    "node",
+    "js"
+  ],
+  "author": "Vladimir Semenov",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/thesun2003/bash.im.api/issues"
+  },
+  "homepage": "https://github.com/thesun2003/bash.im.api#readme"
+}
