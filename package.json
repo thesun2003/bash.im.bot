@@ -11,11 +11,13 @@
     "url": "git+https://github.com/thesun2003/bash.im.api.git"
   },
   "dependencies": {
+    "body-parser": "^1.15.2",
     "cheerio": "^0.22.0",
     "config": "^1.21.0",
     "express": "^4.14.0",
     "iconv-lite": "^0.4.13",
     "merge": "^1.2.0",
+    "messenger-bot": "^2.4.0",
     "mongodb": "^2.2.10",
     "mongoose": "^4.6.2",
     "request": "^2.75.0"

@@ -1,3 +1,6 @@
 {
-	"abbys_url": "http://bash.im/abyss/"
+	"abbys_url": "http://bash.im/abyss/",
+	"verifyToken": "1234567890",
+	"appSecret": "99762c21ff7be42f25b890bb945bf518",
+	"pageAccessToken": "EAAQpgPwjjNIBAFTApJZCFq40FZBgBerBPAw4U1bMW2vqNvu19JteyYDZA49c3ByNXWg0uuP4bjLb5m9IkKRN9cvzKcIyQCByl1vwO6OlIMClNHi6zc7IIKn7AW3HgriynxfJf4NG1DjwDKlyCmCZCtzjAxdl5ZBQmxZBnuM0K8aQZDZD"
 }
