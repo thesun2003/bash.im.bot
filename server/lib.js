@@ -1,6 +1,6 @@
 var app = require('express')();
 var config = require('config');
-var qp = require('Q');
+var qp = require('q');
 var mongoose = require('mongoose');
 var iconv = require('iconv-lite');
 var cheerio = require('cheerio');
