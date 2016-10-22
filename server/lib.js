@@ -20,7 +20,7 @@ function get_quotes_from_html(decodedBody) {
 	var quotes_list = []
 
   	DOMquotes.each(function(index, item) {
-  		quotes_list.push($(item).html());
+  		quotes_list.push($(item).html().toString());
   	});
 
   	return quotes_list;
