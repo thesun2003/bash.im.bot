@@ -22,17 +22,17 @@ bot.on('message', (payload, reply) => {
   bot.getProfile(payload.sender.id, (err, profile) => {
     if (err) throw err
 
-    reply({ text }, (err) => {
-      if (err) throw err
+      get_random_quote()
+        .then((result) => {
 
-    get_random_quote()
-      .then(function(result) {
-        reply({ result }, (err) => {
-          if (err) throw err
-    });
+          reply({ result }, (err) => {
+            if (err) throw err
 
-      console.log(`Echoed back to ${profile.first_name} ${profile.last_name}: ${text}`)
-    })
+            console.log(`Echoed back to ${profile.first_name} ${profile.last_name}: ${result}`)
+          })
+
+      })
+
   })
 })
 
