@@ -23,10 +23,10 @@ bot.on('message', (payload, reply) => {
     if (err) throw err
 
     get_random_quote()
-      .then(function(result) {
+      .then( (result) => {
         reply({ result }, (err) => {
           if (err) throw err
-    });
+    })
 
       console.log(`Echoed back to ${profile.first_name} ${profile.last_name}: ${text}`)
     })

@@ -1,7 +1,7 @@
 {
-  "name": "bash.im.api",
-  "version": "0.0.1",
-  "description": "Bash.Im API",
+  "name": "sofia.bash.bot",
+  "version": "0.0.7",
+  "description": "Sofia Bash Bot",
   "main": "index.js",
   "scripts": {
     "start": "node index.js"
@@ -29,6 +29,10 @@
     "node",
     "js"
   ],
+  "engines": {
+    "node": "^6.4.0",
+    "npm": "^3.10.3"
+  },
   "author": "Vladimir Semenov",
   "license": "ISC",
   "bugs": {

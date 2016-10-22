@@ -1,6 +1,6 @@
 var app = require('express')();
 var config = require('config');
-var Q = require('Q');
+var qp = require('Q');
 var mongoose = require('mongoose');
 var iconv = require('iconv-lite');
 var cheerio = require('cheerio');
@@ -27,7 +27,7 @@ function get_quotes_from_html(decodedBody) {
 }
 
 function get_random_quote() {
-	var deferred = Q.defer();
+	var deferred = qp.defer();
 	
 	var url = config.get('abbys_url');
 
