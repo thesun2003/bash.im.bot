@@ -25,14 +25,10 @@ bot.on('message', (payload, reply) => {
       reply({ text: 'Getting a new qoute... this might take a few seconds.' })
 
       get_random_quote()
-        .then((result) => {
+        .then( (result) => {
+          reply({ text: result })
 
-          reply({ text: result }, (err) => {
-            if (err) throw err
-
-            console.log(`Echoed back to ${profile.first_name} ${profile.last_name}: ${result}`)
-          })
-
+          console.log(`Replied back to ${profile.first_name} ${profile.last_name}: ${result}`)
       })
 
   })
