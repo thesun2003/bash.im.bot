@@ -26,7 +26,7 @@ bot.on('message', (payload, reply) => {
 
       get_random_quote()
         .then( (result) => {
-          reply({ text: "Xyz:<br>&#x41F;&#x43E;&#x447;&#x435;" })
+          reply({ text: result })
 
           console.log(`Replied back to ${profile.first_name} ${profile.last_name}: ${result}`)
       })
