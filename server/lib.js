@@ -20,7 +20,8 @@ function get_quotes_from_html(decodedBody) {
 	var quotes_list = []
 
   	DOMquotes.each(function(index, item) {
-  		quotes_list.push($(item).html().toString());
+  		var quote = $(item).text().replace(/0123210/gi, "\n");
+  		quotes_list.push(quote);
   	});
 
   	return quotes_list;
@@ -32,11 +33,14 @@ function get_random_quote() {
 	var url = config.get('abbys_url');
 
 	http.get(url, function(response) {
-	  response.pipe(iconv.decodeStream('win1251')).collect(function(err, decodedBody) {
-		var quotes_list = get_quotes_from_html(decodedBody);
-		var result = rand(quotes_list);
+	  response.pipe(iconv.decodeStream('win1251'))
+	  	.collect(function(err, decodedBody) {
+		  	var body = decodedBody.replace(/<br>/gi, '0123210');
 
-		deferred.resolve(result);
+			var quotes_list = get_quotes_from_html(body);
+			var result = rand(quotes_list);
+
+			deferred.resolve(result);
 	  });
 	});
 
