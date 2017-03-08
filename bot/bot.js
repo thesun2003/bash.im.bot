@@ -3,6 +3,7 @@ const app = require('express')();
 const bodyParser = require('body-parser')
 const Bot = require('messenger-bot')
 var config = require('config');
+var qp = require('q');
 
 var get_random_quote = require('../server/lib')
 
@@ -26,8 +27,8 @@ bot.on('message', (payload, reply) => {
 
       get_random_quote()
         .then( (result) => {
-          reply({ text: result + ' ' + result })
-          reply({ text: result.length*2 })
+
+          reply({ text: result + ' ' + result, text: result.length*2 })
 
           console.log(`Replied back to ${profile.first_name} ${profile.last_name}: ${result}`)
       })
