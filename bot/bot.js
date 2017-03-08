@@ -26,6 +26,7 @@ bot.on('message', (payload, reply) => {
 
       get_random_quote()
         .then( (result) => {
+          reply({ text: result })
           reply({ text: result.length })
 
           console.log(`Replied back to ${profile.first_name} ${profile.last_name}: ${result}`)
