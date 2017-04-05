@@ -21,12 +21,11 @@ bot.on('error', (err) => {
 
 bot.on('message', (payload, reply, actions) => {
   let text = payload.message.text;
+  actions.markRead();
   actions.setTyping(true);
 
   bot.getProfile(payload.sender.id, (err, profile) => {
     if (err) throw err
-
-      // reply({ text: 'секундочку..' })
 
       get_random_quote()
         .then( (result) => {
@@ -45,7 +44,6 @@ bot.on('message', (payload, reply, actions) => {
             }
           })
 
-          // console.log(`Replied back to ${profile.first_name} ${profile.last_name}: ${result}`)
       })
 
   })
