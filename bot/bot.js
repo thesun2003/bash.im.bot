@@ -19,13 +19,14 @@ bot.on('error', (err) => {
   console.log(err.message)
 })
 
-bot.on('message', (payload, reply) => {
-  let text = payload.message.text
+bot.on('message', (payload, reply, actions) => {
+  let text = payload.message.text;
+  actions.setTyping(true);
 
   bot.getProfile(payload.sender.id, (err, profile) => {
     if (err) throw err
 
-      reply({ text: 'секундочку..' })
+      // reply({ text: 'секундочку..' })
 
       get_random_quote()
         .then( (result) => {
