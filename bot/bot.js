@@ -33,13 +33,13 @@ bot.on('message', (payload, reply) => {
           var hascut = false;
 
           if (message.length > max_message_size) {
-            message = result.substr(0, max_message_size);
+            message = result.substr(0, max_message_size) + '...';
             hascut = true;
           }
 
           reply({ text: message}, (err, info) => {
             if (hascut) {
-              message = result.substr(max_message_size + 1);
+              message = '...' + result.substr(max_message_size);
               reply({text: message});
             }
           })
