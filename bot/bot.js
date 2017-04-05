@@ -7,6 +7,8 @@ var qp = require('q');
 
 var get_random_quote = require('../server/lib')
 
+const max_message_size = 450; // just in case
+
 let bot = new Bot({
   token: config.get('pageAccessToken'),
   verify: config.get('verifyToken'),
@@ -27,10 +29,22 @@ bot.on('message', (payload, reply) => {
 
       get_random_quote()
         .then( (result) => {
+          var message = result;
+          var hascut = false;
 
-          reply({ text: result + ' ' + result}, { text: result.length*2 })
+          if (message.length() > max_message_size) {
+            message = result.substr(0, max_message_size);
+            hascut = true;
+          }
 
-          console.log(`Replied back to ${profile.first_name} ${profile.last_name}: ${result}`)
+          reply({ text: message}, (err, info) => {
+            if (hascut) {
+              message = result.substr(max_message_size + 1);
+              reply({text: message});
+            }
+          })
+
+          // console.log(`Replied back to ${profile.first_name} ${profile.last_name}: ${result}`)
       })
 
   })

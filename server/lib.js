@@ -7,6 +7,7 @@ var cheerio = require('cheerio');
 var http = require('http');
 var quotes = require('./quotemodel');
 
+var delimiter = '0123210';
 iconv.skipDecodeWarning = true;
 
 function rand(items){
@@ -20,7 +21,7 @@ function get_quotes_from_html(decodedBody) {
 	var quotes_list = []
 
   	DOMquotes.each(function(index, item) {
-  		var quote = $(item).text().replace(/0123210/gi, "\n");
+  		var quote = $(item).text().replace(new RegExp(delimiter, 'gi'), "\n");
   		quotes_list.push(quote);
   	});
 
@@ -35,7 +36,7 @@ function get_random_quote() {
 	http.get(url, function(response) {
 	  response.pipe(iconv.decodeStream('win1251'))
 	  	.collect(function(err, decodedBody) {
-		  	var body = decodedBody.replace(/<br>/gi, '0123210');
+		  	var body = decodedBody.replace(/<br>/gi, delimiter);
 
 			var quotes_list = get_quotes_from_html(body);
 			var result = rand(quotes_list);
