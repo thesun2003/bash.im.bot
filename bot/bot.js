@@ -25,14 +25,14 @@ bot.on('message', (payload, reply) => {
   bot.getProfile(payload.sender.id, (err, profile) => {
     if (err) throw err
 
-      reply({ text: 'Getting a new qoute... this might take a few seconds.' })
+      reply({ text: 'секундочку..' })
 
       get_random_quote()
         .then( (result) => {
           var message = result;
           var hascut = false;
 
-          if (message.length() > max_message_size) {
+          if (message.length > max_message_size) {
             message = result.substr(0, max_message_size);
             hascut = true;
           }
