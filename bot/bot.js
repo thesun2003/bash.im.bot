@@ -9,6 +9,19 @@ var get_random_quote = require('../server/lib')
 
 const max_message_size = 450; // just in case
 
+let quick_replies = [
+  {
+    "content_type":"text",
+    "title":"Бездна",
+    "payload":"abbys"
+  },
+  {
+    "content_type":"text",
+    "title":"Top10",
+    "payload":"top_10"
+  }
+];
+
 let bot = new Bot({
   token: config.get('pageAccessToken'),
   verify: config.get('verifyToken'),
@@ -37,10 +50,10 @@ bot.on('message', (payload, reply, actions) => {
             hascut = true;
           }
 
-          reply({ text: message}, (err, info) => {
+          reply({ text: message, quick_replies: quick_replies}, (err, info) => {
             if (hascut) {
               message = '...' + result.substr(max_message_size);
-              reply({text: message});
+              reply({ text: message, quick_replies: quick_replies });
             }
           })
 
