@@ -1,11 +1,11 @@
 var app = require('express')();
 var config = require('config');
 var qp = require('q');
-var mongoose = require('mongoose');
+// var mongoose = require('mongoose');
 var iconv = require('iconv-lite');
 var cheerio = require('cheerio');
 var http = require('http');
-var quotes = require('./quotemodel');
+// var quotes = require('./quotemodel');
 
 var delimiter = '0123210';
 iconv.skipDecodeWarning = true;
