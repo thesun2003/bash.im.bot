@@ -4,7 +4,7 @@ var qp = require('q');
 var mongoose = require('mongoose');
 var iconv = require('iconv-lite');
 var cheerio = require('cheerio');
-var http = require('http');
+var https = require('https');
 var quotes = require('./quotemodel');
 
 var delimiter = '0123210';
@@ -33,7 +33,7 @@ function get_random_quote() {
 	
 	var url = config.get('abbys_url');
 
-	http.get(url, function(response) {
+	https.get(url, function(response) {
 	  response.pipe(iconv.decodeStream('win1251'))
 	  	.collect(function(err, decodedBody) {
 		  	var body = decodedBody.replace(/<br>/gi, delimiter);
