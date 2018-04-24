@@ -12,7 +12,7 @@ const max_message_size = 450; // just in case
 let quick_replies = [
   {
     "content_type":"text",
-    "title":"Бездна",
+    "title":"Abbys",
     "payload":"abbys"
   },
   {
@@ -23,10 +23,12 @@ let quick_replies = [
 ];
 
 let bot = new Bot({
-  token: config.get('pageAccessToken'),
-  verify: config.get('verifyToken'),
-  app_secret: config.get('appSecret')
+  token: process.env.PAGE_ACCESS_TOKEN ?: config.get('pageAccessToken'),
+  verify: process.env.VERIFY_TOKEN ?: config.get('verifyToken'),
+  app_secret: process.env.APP_SECRET ?: config.get('appSecret')
 })
+
+console.log(process.env.APP_SECRET ?: config.get('appSecret'))
 
 bot.on('error', (err) => {
   console.log(err.message)

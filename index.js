@@ -9,8 +9,6 @@ var bot = require('./bot/bot')
 
 // mongoose.connect('mongodb://localhost:27017/test');
 
-console.log(config.get('verifyToken'))
-
 app.use('/api', api);
 app.use('/bot', bot);
 app.listen(process.env.PORT || 8080, function(){
