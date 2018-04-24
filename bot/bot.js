@@ -23,9 +23,9 @@ let quick_replies = [
 ];
 
 let bot = new Bot({
-  token: process.env.PAGE_ACCESS_TOKEN ?: config.get('pageAccessToken'),
-  verify: process.env.VERIFY_TOKEN ?: config.get('verifyToken'),
-  app_secret: process.env.APP_SECRET ?: config.get('appSecret')
+  token: process.env.PAGE_ACCESS_TOKEN ? process.env.PAGE_ACCESS_TOKEN : config.get('pageAccessToken'),
+  verify: process.env.VERIFY_TOKEN ? process.env.VERIFY_TOKEN : config.get('verifyToken'),
+  app_secret: process.env.APP_SECRET ? process.env.APP_SECRET : config.get('appSecret')
 })
 
 console.log(process.env.APP_SECRET ?: config.get('appSecret'))
