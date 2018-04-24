@@ -41,8 +41,6 @@ function get_random_quote() {
 			var quotes_list = get_quotes_from_html(body);
 			var result = rand(quotes_list);
 
-			console.log(result);
-
 			deferred.resolve(result);
 	  });
 	});
