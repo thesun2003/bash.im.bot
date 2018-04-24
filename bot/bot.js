@@ -28,7 +28,7 @@ let bot = new Bot({
   app_secret: process.env.APP_SECRET ? process.env.APP_SECRET : config.get('appSecret')
 })
 
-console.log(process.env.APP_SECRET ?: config.get('appSecret'))
+console.log(process.env.APP_SECRET ? process.env.APP_SECRET : config.get('appSecret'));
 
 bot.on('error', (err) => {
   console.log(err.message)
