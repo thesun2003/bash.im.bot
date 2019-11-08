@@ -19,7 +19,7 @@
     "merge": "^1.2.0",
     "messenger-bot": "^2.4.0",
     "mongodb": "^2.2.10",
-    "mongoose": "^4.6.2",
+    "mongoose": "^5.7.8",
     "q": "^1.4.1",
     "request": "^2.75.0"
   },
